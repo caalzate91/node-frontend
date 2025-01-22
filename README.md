@@ -12,12 +12,16 @@ nodejs-frontend-project
 │   ├── models
 │   │   └── User.js                     # User model for authentication and session management
 │   ├── routes
-│   │   └── authRouters.js              # Routes for user authentication
+│      └── authRouters.js               # Routes for user authentication
+│      └── pageRoutes.js                # Routes for rendering pages
 │   └── views
-│       └── login.ejs                   # Template for rendering dynamic content
+│       └── login.ejs                   # Template login for rendering dynamic content
+│       └── profile.ejs                 # Template profile for rendering dynamic content
 ├── package.json                        # npm configuration file with dependencies
 ├── server.js                           # Entry point for the Node.js server
+├── .env                                # Environment variables for the project
 └── README.md                           # Documentation for the project
+
 ```
 
 ## Setup Instructions
@@ -32,23 +36,28 @@ nodejs-frontend-project
    npm install express axios socket.io jsonwebtoken dotenv ejs localstorage
    ```
 
-3. Start the server:
+3. Create a `.env` file in the root directory and add the following environment variables:
    ```
-   node server.js
+    API_URL     : API URL for making requests
+    APP_NAME    : Application name
+    PORT        : Port number for the server
+    APP_VERSION : Application version
+
+4. Start the server:
+   ```
+   npm run start
    ```
 
-4. Open your browser and navigate to `http://localhost:3000` to access the application.
+5. Open a web browser and navigate to `http://localhost:3000` to view the application.
 
 ## Features
 - User authentication using JWT.
-- Real-time session management with Socket.IO.
 - Dynamic content updates based on user interactions.
 - Error handling for invalid credentials and API issues.
 
 ## How It Works
 - The frontend communicates with the backend using Axios for API calls.
 - User sessions are managed with JWT, ensuring secure authentication.
-- Socket.IO enables real-time updates to the user interface, providing a seamless experience.
 
 ## Contribution
 Feel free to submit issues or pull requests for improvements or bug fixes.
